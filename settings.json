@@ -1,0 +1,30 @@
+{
+	"username" : "",
+	"password" : "",
+	"ip" : "127.0.0.1",
+	"port" : 2593,
+	"ultimaonlinedirectory" : "",
+	"clientversion" : "",
+	"lastcharactername" : "",
+	"cliloc" : "Cliloc.enu",
+	"lastservernum" : 1,
+	"fps" : 60,
+	"window_position" : null,
+	"window_size" : null,
+	"is_win_maximized" : true,
+	"saveaccount" : false,
+	"autologin" : false,
+	"reconnect" : false,
+	"reconnect_time" : 0,
+	"login_music" : true,
+	"login_music_volume" : 70,
+	"shard_type" : 0,
+	"fixed_time_step" : true,
+	"run_mouse_in_separate_thread" : true,
+	"force_driver" : 0,
+	"use_verdata" : false,
+	"encryption" : 0,
+	"plugins" : [
+		"./Assistant/Razor.dll"
+	]
+}

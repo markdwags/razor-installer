@@ -1,0 +1,15 @@
+# Visual Studio
+*.vs
+*.vscode
+*.vcxproj.user
+*.csproj.user
+.vscode
+packages/
+
+# Build Output
+[Dd]ebug/
+[Rr]elease/
+/Crypt.quick
+/wiki-github.txt
+/Razor.sln.DotSettings.user
+/help/site
