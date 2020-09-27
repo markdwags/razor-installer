@@ -19,24 +19,24 @@
 #endregion
 
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
+using MahApps.Metro.Controls.Dialogs;
+using Microsoft.WindowsAPICodePack.Dialogs;
+using Newtonsoft.Json;
 using Octokit;
 using RazorInstaller.Helpers;
+using RazorInstaller.Models;
 using System;
 using System.ComponentModel;
+using System.Configuration;
+using System.Diagnostics;
 using System.IO;
+using System.IO.Compression;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using GalaSoft.MvvmLight.Command;
-using MahApps.Metro.Controls.Dialogs;
-using Microsoft.WindowsAPICodePack.Dialogs;
-using RazorInstaller.Models;
-using System.IO.Compression;
-using Newtonsoft.Json;
-using System.Diagnostics;
-using System.Configuration;
 
 namespace RazorInstaller.ViewModel
 {
@@ -155,7 +155,7 @@ namespace RazorInstaller.ViewModel
 
             InstallPath = ConfigurationManager.AppSettings["InstallPath"];
             UODataPath = ConfigurationManager.AppSettings["UODataPath"];
-            ServerHost = ConfigurationManager.AppSettings["ServerHost"];            
+            ServerHost = ConfigurationManager.AppSettings["ServerHost"];
             ServerPort = ConfigurationManager.AppSettings["ServerPort"];
         }
 
@@ -313,7 +313,7 @@ namespace RazorInstaller.ViewModel
                 {
                     Process process = new Process
                     {
-                    StartInfo =
+                        StartInfo =
                         {
                             FileName = InstallCUO ? Path.Combine(InstallPath, "ClassicUO.exe") : Path.Combine(InstallPath, "Razor.exe"),
                             WorkingDirectory = InstallPath
@@ -434,7 +434,7 @@ namespace RazorInstaller.ViewModel
             {
                 wc.DownloadProgressChanged += HandleDownloadProgress;
                 wc.DownloadFileCompleted += HandleDownloadComplete;
-                
+
                 var syncObject = new object();
                 lock (syncObject)
                 {

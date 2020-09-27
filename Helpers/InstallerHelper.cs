@@ -23,8 +23,6 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Reflection;
-using Newtonsoft.Json;
-using RazorInstaller.Models;
 
 namespace RazorInstaller.Helpers
 {

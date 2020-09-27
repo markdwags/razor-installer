@@ -18,8 +18,8 @@
 
 #endregion
 
-using System.Windows;
 using Newtonsoft.Json;
+using System.Windows;
 
 namespace RazorInstaller.Models
 {
@@ -75,6 +75,6 @@ namespace RazorInstaller.Models
 
         [JsonProperty("encryption")] public byte Encryption { get; set; }
 
-        [JsonProperty("plugins")] public string[] Plugins { get; set; } = {@"./Assistant/Razor.dll"};
+        [JsonProperty("plugins")] public string[] Plugins { get; set; } = { @"./Assistant/Razor.dll" };
     }
 }
