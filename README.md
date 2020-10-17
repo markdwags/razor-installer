@@ -7,10 +7,11 @@ This is a simple installer for [Razor](https://github.com/markdwags/Razor) with 
 * Download the [latest release](https://github.com/markdwags/razor-installer/releases)
 * Extract `RazorInstaller.zip` and run `RazorInstaller.exe`
 
-![installer](https://imgur.com/ifrEG3m.png)
+![installer](https://imgur.com/TkB1TQ1.png)
 
 * Select an installation path (this is where Razor and/or ClassicUO will install)
 * Select the path to your UO data files (this is where you installed Ultima Online)
+* Enter the client version for the UO files (for example, 5.0.8.3 or 7.0.15.1)
 * Enter the server host name to the shard you play on
 * Enter the port (it's usually 2593)
 
