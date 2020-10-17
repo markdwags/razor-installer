@@ -44,6 +44,12 @@
                  mah:TextBoxHelper.Watermark="C:\path\to\uo" IsReadOnly="True"
                  Text="{Binding Path=UODataPath, Mode=OneWay}"
                  VerticalAlignment="Top" Width="276" />
+        <Button Content="Set" HorizontalAlignment="Left" Margin="449,135,0,0" VerticalAlignment="Top" Width="74"
+                Command="{Binding BrowseUOPathCommand}" IsEnabled="{Binding IsButtonEnabled}" />
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="165,166,0,0" TextWrapping="Wrap"
+                 Text="{Binding Path=ClientVersion, UpdateSourceTrigger=PropertyChanged}"
+                 mah:TextBoxHelper.Watermark="5.0.8.3 | 7.0.15.1 | x.x.x.x"
+                 VerticalAlignment="Top" Width="276" />
         <TextBox HorizontalAlignment="Left" Height="23" Margin="165,198,0,0" TextWrapping="Wrap"
                  Text="{Binding Path=ServerHost, UpdateSourceTrigger=PropertyChanged}"
                  mah:TextBoxHelper.Watermark="login.server.com"
@@ -55,8 +61,6 @@
         <Button Content="Install / Update" HorizontalAlignment="Left" Height="44" Margin="380,273,0,0"
                 VerticalAlignment="Top" Width="138" Command="{Binding InstallUpdateCommand}"
                 IsEnabled="{Binding IsButtonEnabled}" />
-        <Button Content="Set" HorizontalAlignment="Left" Margin="449,135,0,0" VerticalAlignment="Top" Width="74"
-                Command="{Binding BrowseUOPathCommand}" IsEnabled="{Binding IsButtonEnabled}" />
         <CheckBox Content="Install Razor Dev Preview" HorizontalAlignment="Left" Margin="18,299,0,0"
                   IsChecked="{Binding UseRazorPreview}"
                   VerticalAlignment="Top" />
@@ -73,10 +77,7 @@
                 Command="{Binding WebsiteCommand}" IsEnabled="{Binding IsButtonEnabled}" />
         <Label Content="Client Version:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="21,166,0,0"
                FontFamily="{StaticResource uoclassic}" FontSize="14" />
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="165,166,0,0" TextWrapping="Wrap"
-                 Text="{Binding Path=ClientVersion, UpdateSourceTrigger=PropertyChanged}"
-                 mah:TextBoxHelper.Watermark="5.0.8.3 | 7.0.15.1 | x.x.x.x"
-                 VerticalAlignment="Top" Width="276" />
+
 
     </Grid>
 
