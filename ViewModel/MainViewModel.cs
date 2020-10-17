@@ -131,6 +131,17 @@ namespace RazorInstaller.ViewModel
             }
         }
 
+        private string _clientVersion;
+        public string ClientVersion
+        {
+            get { return _clientVersion; }
+            set
+            {
+                _clientVersion = value;
+                RaisePropertyChanged();
+            }
+        }
+
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>
@@ -157,6 +168,7 @@ namespace RazorInstaller.ViewModel
             UODataPath = ConfigurationManager.AppSettings["UODataPath"];
             ServerHost = ConfigurationManager.AppSettings["ServerHost"];
             ServerPort = ConfigurationManager.AppSettings["ServerPort"];
+            ClientVersion = ConfigurationManager.AppSettings["ClientVersion"];
         }
 
         private void DoSetInstallPath()
@@ -228,9 +240,9 @@ namespace RazorInstaller.ViewModel
 
         public void DoConfirmInstallUpdate()
         {
-            if (string.IsNullOrEmpty(InstallPath) || string.IsNullOrEmpty(UODataPath) || string.IsNullOrEmpty(ServerHost) || string.IsNullOrEmpty(ServerPort))
+            if (string.IsNullOrEmpty(InstallPath) || string.IsNullOrEmpty(UODataPath) || string.IsNullOrEmpty(ServerHost) || string.IsNullOrEmpty(ServerPort) || string.IsNullOrEmpty(ClientVersion))
             {
-                MessageBox.Show("You must define an install path, UO data folder, server host and port.", "Missing Fields", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("You must define an install path, UO data folder, client version, server host and/or port.", "Missing Fields", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
@@ -399,6 +411,7 @@ namespace RazorInstaller.ViewModel
                         UltimaOnlineDirectory = UODataPath,
                         IP = ServerHost,
                         Port = Convert.ToInt32(ServerPort),
+                        ClientVersion = ClientVersion,
                         Plugins = new[] { Path.Combine(InstallPath, "Razor", "Razor.exe") }
                     };
 
@@ -409,6 +422,7 @@ namespace RazorInstaller.ViewModel
                 InstallerHelper.UpdateSetting("UODataPath", UODataPath);
                 InstallerHelper.UpdateSetting("ServerHost", ServerHost);
                 InstallerHelper.UpdateSetting("ServerPort", ServerPort);
+                InstallerHelper.UpdateSetting("ClientVersion", ClientVersion);
 
                 if (ShowLaunchDialogCommand.CanExecute(null))
                     ShowLaunchDialogCommand.Execute(null);

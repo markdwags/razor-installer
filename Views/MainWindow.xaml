@@ -9,38 +9,40 @@
                  xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
                  mc:Ignorable="d"
                  IsMaxRestoreButtonEnabled="False" ShowMaxRestoreButton="False"
-                 Title="Razor - Installer" Height="389.375" Width="536" ResizeMode="NoResize" Icon="/RazorInstaller;component/Resources/App.ico" ShowIconOnTitleBar="False">
+                 Title="Razor - Installer" Height="389.375" Width="536" ResizeMode="NoResize"
+                 Icon="/RazorInstaller;component/Resources/App.ico" ShowIconOnTitleBar="False">
 
     <Window.Resources>
         <ResourceDictionary />
     </Window.Resources>
 
     <Grid>
-        <Image Source="/RazorInstaller;component/Resources/logo.png" Margin="10,0,362,220" />
+        <Image Source="/RazorInstaller;component/Resources/logo.png" Margin="10,0,401,257" />
         <Label Content="{Binding RazorVersion}" HorizontalAlignment="Left"
-               Margin="170,89,0,0" VerticalAlignment="Top" FontFamily="{StaticResource uoclassic}" FontSize="12"
+               Margin="173,51,0,0" VerticalAlignment="Top" FontFamily="{StaticResource uoclassic}" FontSize="12"
                Width="350" />
 
         <Label Content="{Binding CUOVersion}" HorizontalAlignment="Left"
-               Margin="170,104,0,0" VerticalAlignment="Top" FontFamily="{StaticResource uoclassic}" FontSize="12"
+               Margin="173,66,0,0" VerticalAlignment="Top" FontFamily="{StaticResource uoclassic}" FontSize="12"
                Width="350" />
 
         <Label Content="Install Path:" HorizontalAlignment="Left"
-               Margin="18,133,0,0" VerticalAlignment="Top" FontFamily="{StaticResource uoclassic}" FontSize="14"
+               Margin="21,102,0,0" VerticalAlignment="Top" FontFamily="{StaticResource uoclassic}" FontSize="14"
                Width="119" />
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="165,133,0,0" TextWrapping="Wrap"
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="165,103,0,0" TextWrapping="Wrap"
                  mah:TextBoxHelper.Watermark="C:\Razor or C:\ClassicUO" IsReadOnly="True"
                  VerticalAlignment="Top" Width="276" Text="{Binding Path=InstallPath, Mode=OneWay}" />
-        <Button Content="Set" HorizontalAlignment="Left" Margin="446,132,0,0" VerticalAlignment="Top" Width="74"
-                Command="{Binding BrowseInstallPathCommand}" IsEnabled="{Binding IsButtonEnabled}" />
+        <Button Content="Set" HorizontalAlignment="Left" Margin="449,103,0,0" VerticalAlignment="Top" Width="74"
+                Command="{Binding BrowseInstallPathCommand}" IsEnabled="{Binding IsButtonEnabled}" Height="27" />
         <Label Content="Server Host:" HorizontalAlignment="Left" Margin="18,197,0,0" VerticalAlignment="Top"
                RenderTransformOrigin="-0.168,-0.471" FontFamily="{StaticResource uoclassic}" FontSize="14" />
         <Label Content="Server Port:" HorizontalAlignment="Left" Margin="18,229,0,0" VerticalAlignment="Top"
                FontFamily="{StaticResource uoclassic}" FontSize="14" />
-        <Label Content="Ultima Online Path:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,165,0,0"
+        <Label Content="Ultima Online Path:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="21,134,0,0"
                FontFamily="{StaticResource uoclassic}" FontSize="14" />
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="165,166,0,0" TextWrapping="Wrap"
-                 mah:TextBoxHelper.Watermark="C:\path\to\uo" IsReadOnly="True" Text="{Binding Path=UODataPath, Mode=OneWay}"
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="165,135,0,0" TextWrapping="Wrap"
+                 mah:TextBoxHelper.Watermark="C:\path\to\uo" IsReadOnly="True"
+                 Text="{Binding Path=UODataPath, Mode=OneWay}"
                  VerticalAlignment="Top" Width="276" />
         <TextBox HorizontalAlignment="Left" Height="23" Margin="165,198,0,0" TextWrapping="Wrap"
                  Text="{Binding Path=ServerHost, UpdateSourceTrigger=PropertyChanged}"
@@ -51,21 +53,30 @@
                  mah:TextBoxHelper.Watermark="2593"
                  VerticalAlignment="Top" Width="276" />
         <Button Content="Install / Update" HorizontalAlignment="Left" Height="44" Margin="380,273,0,0"
-                VerticalAlignment="Top" Width="138" Command="{Binding InstallUpdateCommand}" IsEnabled="{Binding IsButtonEnabled}" />
-        <Button Content="Set" HorizontalAlignment="Left" Margin="446,166,0,0" VerticalAlignment="Top" Width="74"
+                VerticalAlignment="Top" Width="138" Command="{Binding InstallUpdateCommand}"
+                IsEnabled="{Binding IsButtonEnabled}" />
+        <Button Content="Set" HorizontalAlignment="Left" Margin="449,135,0,0" VerticalAlignment="Top" Width="74"
                 Command="{Binding BrowseUOPathCommand}" IsEnabled="{Binding IsButtonEnabled}" />
         <CheckBox Content="Install Razor Dev Preview" HorizontalAlignment="Left" Margin="18,299,0,0"
                   IsChecked="{Binding UseRazorPreview}"
                   VerticalAlignment="Top" />
-        <CheckBox Content="Install ClassicUO Dev Preview" HorizontalAlignment="Left" Margin="179,299,0,0"
+        <CheckBox Content="Install ClassicUO Dev Preview" HorizontalAlignment="Left" Margin="165,273,0,0"
                   IsChecked="{Binding UseCUOPreview}"
                   VerticalAlignment="Top" Width="178" />
-        <mah:MetroProgressBar HorizontalAlignment="Left" Height="18" Margin="18,330,0,0" VerticalAlignment="Top" Width="500"
-                     Value="{Binding CurrentProgress, Mode=OneWay}" />
+        <mah:MetroProgressBar HorizontalAlignment="Left" Height="18" Margin="18,330,0,0" VerticalAlignment="Top"
+                              Width="500"
+                              Value="{Binding CurrentProgress, Mode=OneWay}" />
         <CheckBox Content="Install ClassicUO" HorizontalAlignment="Left" Margin="18,273,0,0"
-            IsChecked="{Binding InstallCUO, Mode=OneWay}" VerticalAlignment="Top" />
-        <Button Content="Help/Support" HorizontalAlignment="Left" Margin="422,10,0,0" VerticalAlignment="Top" Width="98"
-            Command="{Binding WebsiteCommand}" IsEnabled="{Binding IsButtonEnabled}" />
+                  IsChecked="{Binding InstallCUO, Mode=OneWay}" VerticalAlignment="Top" />
+        <Button Content="Help/Support" HorizontalAlignment="Left" Margin="422,10,0,0" VerticalAlignment="Top"
+                Width="98"
+                Command="{Binding WebsiteCommand}" IsEnabled="{Binding IsButtonEnabled}" />
+        <Label Content="Client Version:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="21,166,0,0"
+               FontFamily="{StaticResource uoclassic}" FontSize="14" />
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="165,166,0,0" TextWrapping="Wrap"
+                 Text="{Binding Path=ClientVersion, UpdateSourceTrigger=PropertyChanged}"
+                 mah:TextBoxHelper.Watermark="5.0.8.3 | 7.0.15.1 | x.x.x.x"
+                 VerticalAlignment="Top" Width="276" />
 
     </Grid>
 
